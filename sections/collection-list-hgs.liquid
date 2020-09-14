@@ -1,0 +1,27 @@
+<div>
+
+    <h2>{{section.settings.title | escape}} </h2>
+
+</div>
+
+
+   
+
+{% schema %}
+{
+  "name": "Product List HGS",  
+  "settings": [
+    {
+        "id": "title",
+        "type": "text",
+        "label" : "section title"
+    }
+  ],  
+  "presets": [
+      {
+          "name": "HGS Featured Collection",
+          "category": "Features"
+      }
+  ]
+}
+{% endschema %}
