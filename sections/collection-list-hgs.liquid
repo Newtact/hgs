@@ -2,10 +2,192 @@
 
     <h2>{{section.settings.title | escape}} </h2>
 
+
+<style>
+
+.hgs-content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9rem;
+    min-width: 800px;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15) ;
+}
+
+.hgs-content-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.hgs-content-table th,
+.hgs-content-table td {
+    padding: 12px 15px;
+}
+
+.hgs-content-table tbody tr{
+    border-bottom: 1px solid #dddddd;    
+}
+
+.hgs-content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.hgs-content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+form {
+  width: auto;
+  margin: 0 auto;
+  text-align: left;  
+}
+
+.value-button {
+  display: inline-block;
+  border: 1px solid #ddd;
+  margin: 0px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px 0;
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.value-button:hover {
+  cursor: pointer;
+}
+
+form #decrease {
+  margin-right: -4px;
+  border-radius: 8px 0 0 8px;
+}
+
+form #increase {
+  margin-left: -4px;
+  border-radius: 0 8px 8px 0;
+}
+
+form #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+
+input#number {
+  text-align: center;
+  border: none;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 0px;
+  width: 30px;
+  height: 30px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.button-add{
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(142, 211, 158, 0.8);
+    background: rgb(28, 184, 65);
+}
+</style>
+
+<body>
+    <table class="hgs-content-table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Options</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Add to Cart</th>
+            </tr>            
+        </thead>
+        <tbody>
+            <tr>
+                <td>Apple</td>
+                <td>Apple</td>
+                <td>1kg</td>
+                <td>250.00</td>
+                <td>
+                    <form>
+                        <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                        <input type="number" id="number" value="0" />
+                        <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                    </form>
+                </td>
+                <td>
+                    <button class="button-add">Add</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Tomoto</td>
+                <td>Tomato</td>
+                <td>1kg</td>
+                <td>50.00</td>
+                <td>
+                    <form>
+                        <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                        <input type="number" id="number" value="0" />
+                        <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                    </form>
+                </td>
+                <td>Add</td>
+            </tr>
+            <tr>
+                <td>Potato</td>
+                <td>Potato</td>
+                <td>1kg</td>
+                <td>80.00</td>
+                <td>
+                    <form>
+                        <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                        <input type="number" id="number" value="0" />
+                        <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                    </form>
+                </td>
+                <td>Add</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+<script>
+function increaseValue() {
+  var value = parseInt(document.getElementById('number').value, 10);
+  value = isNaN(value) ? 0 : value;
+  value++;
+  document.getElementById('number').value = value;
+}
+
+function decreaseValue() {
+  var value = parseInt(document.getElementById('number').value, 10);
+  value = isNaN(value) ? 0 : value;
+  value < 1 ? value = 1 : '';
+  value--;
+  document.getElementById('number').value = value;
+}
+</script>
+
 </div>
 
 
-   
 
 {% schema %}
 {
