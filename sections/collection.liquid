@@ -1,3 +1,20 @@
+{% stylesheet %}
+  .page-width,  
+  .section-header
+  {
+    transform: translate(0, -20px);
+  }
+
+@media only screen and (max-width: 800px) {
+  .page-width,  
+  .section-header
+  {
+    transform: translate(0, -20px) !important;
+  }
+}
+
+{% endstylesheet %}
+
 <div class="page-width">
   {% if section.settings.title != blank %}
     <div class="section-header text-center">

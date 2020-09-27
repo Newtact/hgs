@@ -12,7 +12,7 @@
     "color_image_overlay_text": "#ffffff",
     "color_image_overlay": "#685858",
     "image_overlay_opacity": 40,
-    "color_borders": "#ebebeb",
+    "color_borders": "#000000",
     "color_body_bg": "#ffffff",
     "type_header_font": "helvetica_n7",
     "type_header_base_size": 26,
@@ -24,18 +24,18 @@
     "share_facebook": true,
     "share_twitter": true,
     "share_pinterest": true,
-    "social_twitter_link": "",
-    "social_facebook_link": "",
-    "social_pinterest_link": "",
-    "social_instagram_link": "",
+    "social_twitter_link": "https:\/\/twitter.com\/HydroGreenSprings",
+    "social_facebook_link": "https:\/\/facebook.com\/HydroGreenSprings",
+    "social_pinterest_link": "https:\/\/pinterest.com\/HydroGreenSprings",
+    "social_instagram_link": "http:\/\/instagram.com\/HydroGreenSprings",
     "social_tumblr_link": "",
     "social_snapchat_link": "",
-    "social_youtube_link": "",
+    "social_youtube_link": "https:\/\/www.youtube.com\/HydroGreenSprings",
     "social_vimeo_link": "",
     "favicon": "",
     "enable_ajax": true,
     "checkout_header_image": "",
-    "checkout_logo_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Logo_final3.png",
     "checkout_logo_position": "left",
     "checkout_logo_size": "medium",
     "checkout_body_background_image": "",
@@ -53,7 +53,7 @@
         "type": "header",
         "settings": {
           "align_logo": "left",
-          "logo": "shopify:\/\/shop_images\/logo.png",
+          "logo": "shopify:\/\/shop_images\/Logo_final5.png",
           "logo_max_width": 250,
           "main_linklist": "main-menu",
           "message": false,
@@ -62,177 +62,6 @@
           "message_link": "",
           "color_bg": "#3a3a3a",
           "color_text": "#ffffff"
-        }
-      },
-      "hero-1": {
-        "type": "hero",
-        "settings": {
-          "image": "",
-          "alignment": "center",
-          "hero_layout": "full_width",
-          "hero_size": "large",
-          "text_size": "large",
-          "title": "Image with text overlay",
-          "text": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.<\/p>",
-          "button_label": "",
-          "button_link": ""
-        }
-      },
-      "feature-row": {
-        "type": "feature-row",
-        "settings": {
-          "image": "",
-          "layout": "left",
-          "title": "Image with text",
-          "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-          "button_label": "",
-          "button_link": ""
-        }
-      },
-      "feature-columns": {
-        "type": "feature-columns",
-        "blocks": {
-          "feature-columns-0": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": true,
-              "image": "",
-              "title": "Add a title or tagline",
-              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
-              "button_label": "",
-              "button_link": ""
-            }
-          },
-          "feature-columns-1": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": true,
-              "image": "",
-              "title": "Add a title or tagline",
-              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
-              "button_label": "",
-              "button_link": ""
-            }
-          },
-          "feature-columns-2": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": true,
-              "image": "",
-              "title": "Add a title or tagline",
-              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
-              "button_label": "",
-              "button_link": ""
-            }
-          }
-        },
-        "block_order": [
-          "feature-columns-0",
-          "feature-columns-1",
-          "feature-columns-2"
-        ],
-        "settings": {
-          "title": "",
-          "align_text": "left"
-        }
-      },
-      "collection": {
-        "type": "collection",
-        "settings": {
-          "title": "Featured collection",
-          "collection": "",
-          "grid": 4,
-          "rows": 2,
-          "show_vendor": false,
-          "show_view_all": false
-        }
-      },
-      "hero-2": {
-        "type": "hero",
-        "settings": {
-          "image": "",
-          "alignment": "center",
-          "hero_layout": "full_width",
-          "hero_size": "medium",
-          "text_size": "large",
-          "title": "Image with text overlay",
-          "text": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.<\/p>",
-          "button_label": "",
-          "button_link": ""
-        }
-      },
-      "quotes": {
-        "type": "quotes",
-        "blocks": {
-          "quotes-0": {
-            "type": "quote",
-            "settings": {
-              "quote": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
-              "author": "Author's name"
-            }
-          },
-          "quotes-1": {
-            "type": "quote",
-            "settings": {
-              "quote": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
-              "author": "Author's name"
-            }
-          },
-          "quotes-2": {
-            "type": "quote",
-            "settings": {
-              "quote": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
-              "author": "Author's name"
-            }
-          }
-        },
-        "block_order": [
-          "quotes-0",
-          "quotes-1",
-          "quotes-2"
-        ],
-        "settings": {
-          "title": ""
-        }
-      },
-      "image-bar": {
-        "type": "image-bar",
-        "blocks": {
-          "image-bar-0": {
-            "type": "image",
-            "settings": {
-              "image": "",
-              "alignment": "center",
-              "link": "",
-              "cta_label": ""
-            }
-          },
-          "image-bar-1": {
-            "type": "image",
-            "settings": {
-              "image": "",
-              "alignment": "center",
-              "link": "",
-              "cta_label": ""
-            }
-          },
-          "image-bar-2": {
-            "type": "image",
-            "settings": {
-              "image": "",
-              "alignment": "center",
-              "link": "",
-              "cta_label": ""
-            }
-          }
-        },
-        "block_order": [
-          "image-bar-0",
-          "image-bar-1",
-          "image-bar-2"
-        ],
-        "settings": {
-          "section_height": "medium"
         }
       },
       "footer": {
@@ -245,34 +74,304 @@
               "menu": "footer"
             }
           },
+          "1600177359638": {
+            "type": "text",
+            "settings": {
+              "title": "Please contact us",
+              "text": "<p><\/p>\n<p>HydroGreenSprings,<\/p>\n<p>Kavuri Hills , Madhapur,<\/p>\n<p>Hyderabad , TS , India<\/p>"
+            }
+          },
           "footer-1": {
             "type": "newsletter",
             "settings": {
-              "title": "Newsletter"
+              "title": "Signup for a Offers"
             }
           }
         },
         "block_order": [
           "footer-0",
+          "1600177359638",
           "footer-1"
         ],
         "settings": {
           "show_payment_icons": true,
-          "color_footer_bg": "#f6f6f6",
-          "color_footer_text": "#333232",
-          "show_locale_selector": true,
-          "show_currency_selector": true
+          "color_footer_bg": "#000000",
+          "color_footer_text": "#ffffff",
+          "show_locale_selector": false,
+          "show_currency_selector": false
+        }
+      },
+      "1599933642965": {
+        "type": "slideshow",
+        "blocks": {
+          "1599933642965-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/unplash1.jpg",
+              "alignment": "center center",
+              "slide_title": "",
+              "subheading": "",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "1599933642965-1": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/spouts.jpg",
+              "alignment": "center center",
+              "slide_title": "",
+              "subheading": "",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "1599935428480": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/holding.jpg",
+              "alignment": "center center",
+              "slide_title": "",
+              "subheading": "",
+              "button_label": "",
+              "button_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1599933642965-0",
+          "1599933642965-1",
+          "1599935428480"
+        ],
+        "settings": {
+          "slideshow_height": "small",
+          "text_size": "medium",
+          "text_alignment": "center center",
+          "show_overlay": false,
+          "autorotate": true,
+          "autorotate_speed": 3
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "layout": "grid",
+          "grid": 5,
+          "rows": 4,
+          "show_collection_image": true,
+          "show_vendor": true,
+          "sort_enable": true,
+          "tags_enable": true
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "show_quantity_selector": true,
+          "show_variant_labels": true,
+          "show_vendor": true,
+          "enable_payment_button": true,
+          "show_share_buttons": true,
+          "media_size": "medium",
+          "enable_image_zoom": true,
+          "enable_video_looping": false
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "show_product_recommendations": true,
+          "heading": "You may also like",
+          "show_vendor": false
+        }
+      },
+      "list-collections-template": {
+        "type": "list-collections-template",
+        "settings": {
+          "display_type": "all",
+          "sort": "alphabetical",
+          "grid": 3
+        }
+      },
+      "cart-template": {
+        "type": "cart-template",
+        "settings": {
+          "cart_ajax_enable": true,
+          "cart_notes_enable": true
+        }
+      },
+      "1600175225649": {
+        "type": "logo-bar",
+        "blocks": {
+          "1600175225649-0": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/irrigation.png",
+              "link": ""
+            }
+          },
+          "1600175225649-1": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/green.png",
+              "link": ""
+            }
+          },
+          "1600175225649-2": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/price-tag-64.png",
+              "link": ""
+            }
+          },
+          "1600175225649-3": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/tree.png",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1600175225649-0",
+          "1600175225649-1",
+          "1600175225649-2",
+          "1600175225649-3"
+        ],
+        "settings": {
+          "title": "HydrogreenSprings TRUST"
+        }
+      },
+      "1600175676160": {
+        "type": "collection-list-hgs",
+        "settings": {
+          "title": ""
+        }
+      },
+      "1600175930167": {
+        "type": "hero",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/steps.png",
+          "alignment": "center",
+          "hero_layout": "full_width",
+          "hero_size": "adapt",
+          "text_size": "medium",
+          "title": "",
+          "text": "",
+          "button_label": "",
+          "button_link": ""
+        }
+      },
+      "1600176080048": {
+        "type": "collection",
+        "settings": {
+          "title": "Featured collection",
+          "collection": "fruits",
+          "grid": 5,
+          "rows": 3,
+          "show_vendor": false,
+          "show_view_all": true
+        }
+      },
+      "1600176146752": {
+        "type": "collection-list",
+        "blocks": {
+          "1600176146752-0": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "fruits"
+            }
+          },
+          "1600176146752-1": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "veggies"
+            }
+          }
+        },
+        "block_order": [
+          "1600176146752-0",
+          "1600176146752-1"
+        ],
+        "settings": {
+          "title": "OUR COLLECTIONS",
+          "grid": 5
+        }
+      },
+      "1600176270712": {
+        "type": "quotes",
+        "blocks": {
+          "1600176270712-0": {
+            "type": "quote",
+            "settings": {
+              "quote": "<p>We are really happy with HGS quality products.<\/p>",
+              "author": "Gopi"
+            }
+          },
+          "1600176270712-1": {
+            "type": "quote",
+            "settings": {
+              "quote": "<p>HGS is a trusted brand in Hyderabad<\/p>",
+              "author": "Sathish (techie)"
+            }
+          },
+          "1600176270712-2": {
+            "type": "quote",
+            "settings": {
+              "quote": "<p>All are pesticides free products , my entire family trusts their products.<\/p>",
+              "author": "Ravi Reddy"
+            }
+          }
+        },
+        "block_order": [
+          "1600176270712-0",
+          "1600176270712-1",
+          "1600176270712-2"
+        ],
+        "settings": {
+          "title": "Testimonials"
+        }
+      },
+      "1600179355272": {
+        "type": "custom-content",
+        "blocks": {
+          "1600179355272-0": {
+            "type": "text",
+            "settings": {
+              "title": "WITH GREAT QUALITY COMES GREAT CHOICE.",
+              "text": "<p>Creating fulfilling shopping experiences since 2020,<br>HGS&nbsp;is more than just a retail store. From fresh produce,<br>gourmet foods to home appliances and everything in between,<br>we bring the best of the world to our aisles.<\/p>",
+              "width": "50%",
+              "alignment": "center",
+              "align_text": "left"
+            }
+          },
+          "1600179449996": {
+            "type": "video",
+            "settings": {
+              "video_url": "https:\/\/www.youtube.com\/watch?v=k8HctOeme_I",
+              "width": "50%",
+              "alignment": "top-middle"
+            }
+          }
+        },
+        "block_order": [
+          "1600179355272-0",
+          "1600179449996"
+        ],
+        "settings": {
+          "title": "About us"
         }
       }
     },
     "content_for_index": [
-      "hero-1",
-      "feature-row",
-      "feature-columns",
-      "collection",
-      "hero-2",
-      "quotes",
-      "image-bar"
+      "1599933642965",
+      "1600179355272",
+      "1600175676160",
+      "1600176080048",
+      "1600175225649",
+      "1600175930167",
+      "1600176146752",
+      "1600176270712"
     ]
   },
   "presets": {

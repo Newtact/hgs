@@ -1,17 +1,70 @@
-{% comment %} <style>
-
-.slideshow-wrapper,
-.slideshow,
-.slideshow__slide,
-.slideshow__image,
-.placeholder-background
-{
-  background-color: #000000 !important;
-  color: #ffffff !important;
-  fill: #ffffff !important;
+{% stylesheet %}
+.scroll-box {
+  display: grid;
+  grid-template-columns: minmax(min-content, 1fr) 1fr;
+  color: #000000;
+  height: 120px;  
 }
 
-</style> {% endcomment %}
+.scroll-header-logo {  
+  grid-column: 1/2;
+  height: 100%;
+  width: 100px;      
+  transform: translate(0, -50%);
+  z-index: 10;   
+}
+
+.scroll-header-text {
+  grid-column: 2/3;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 11px;
+  text-transform: uppercase;
+  color: green;  
+
+ -moz-transform:translateX(100%);
+ -webkit-transform:translateX(100%);    
+ transform:translateX(100%);
+
+ -moz-animation: moveInLeft 15s linear infinite;
+ -webkit-animation: moveInLeft 15s linear infinite;
+ animation: moveInLeft 15s linear infinite;
+  
+}
+
+/* Move it (define the animation) */
+@-moz-keyframes moveInLeft {
+ 0%   { -moz-transform: translateX(100%); }
+ 100% { -moz-transform: translateX(-130%); }
+}
+@-webkit-keyframes moveInLeft {
+ 0%   { -webkit-transform: translateX(100%); }
+ 100% { -webkit-transform: translateX(-130%); }
+}
+@keyframes moveInLeft {
+ 0%   { 
+ -moz-transform: translateX(100%); /* Firefox bug fix */
+ -webkit-transform: translateX(100%); /* Firefox bug fix */
+ transform: translateX(100%);       
+ }
+ 100% { 
+ -moz-transform: translateX(-100%); /* Firefox bug fix */
+ -webkit-transform: translateX(-100%); /* Firefox bug fix */
+ transform: translateX(-130%); 
+ }
+}
+
+@media only screen and (max-width: 800px) {
+  .scroll-header-text
+  {
+    display: none;
+  }
+}
+
+
+{% endstylesheet %}
+
+
 
 {%- if section.settings.slideshow_height == 'adapt' -%}
   {% comment %}
@@ -193,7 +246,10 @@
     <div class="placeholder-noblocks">
       {{ 'homepage.onboarding.no_content' | t }}
     </div>
-  {% endif %}
+  {% endif %}  
+
+  {% include 'hgs-scroll-box' %}
+
 </div>
 
 {% schema %}
