@@ -12,7 +12,7 @@
     "color_image_overlay_text": "#ffffff",
     "color_image_overlay": "#685858",
     "image_overlay_opacity": 40,
-    "color_borders": "#000000",
+    "color_borders": "#ffffff",
     "color_body_bg": "#ffffff",
     "type_header_font": "helvetica_n7",
     "type_header_base_size": 26,
@@ -24,23 +24,23 @@
     "share_facebook": true,
     "share_twitter": true,
     "share_pinterest": true,
-    "social_twitter_link": "https:\/\/twitter.com\/HydroGreenSprings",
+    "social_twitter_link": "https:\/\/twitter.com\/HGS_Organic",
     "social_facebook_link": "https:\/\/facebook.com\/HydroGreenSprings",
-    "social_pinterest_link": "https:\/\/pinterest.com\/HydroGreenSprings",
+    "social_pinterest_link": "",
     "social_instagram_link": "http:\/\/instagram.com\/HydroGreenSprings",
     "social_tumblr_link": "",
     "social_snapchat_link": "",
     "social_youtube_link": "https:\/\/www.youtube.com\/HydroGreenSprings",
     "social_vimeo_link": "",
-    "favicon": "",
+    "favicon": "shopify:\/\/shop_images\/Logo_logo_v2.png",
     "enable_ajax": true,
     "checkout_header_image": "",
-    "checkout_logo_image": "shopify:\/\/shop_images\/Logo_final3.png",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Logo_final6.png",
     "checkout_logo_position": "left",
     "checkout_logo_size": "medium",
     "checkout_body_background_image": "",
     "checkout_body_background_color": "#fff",
-    "checkout_input_background_color_mode": "white",
+    "checkout_input_background_color_mode": "transparent",
     "checkout_sidebar_background_image": "",
     "checkout_sidebar_background_color": "#fafafa",
     "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
@@ -53,14 +53,14 @@
         "type": "header",
         "settings": {
           "align_logo": "left",
-          "logo": "shopify:\/\/shop_images\/Logo_final5.png",
+          "logo": "shopify:\/\/shop_images\/Logo_final6.png",
           "logo_max_width": 250,
           "main_linklist": "main-menu",
-          "message": false,
+          "message": true,
           "home_page_only": true,
-          "message_text": "Announce something here",
+          "message_text": "Deal of the day - 10%  off",
           "message_link": "",
-          "color_bg": "#3a3a3a",
+          "color_bg": "#4b9d1c",
           "color_text": "#ffffff"
         }
       },
@@ -78,7 +78,7 @@
             "type": "text",
             "settings": {
               "title": "Please contact us",
-              "text": "<p><\/p>\n<p>HydroGreenSprings,<\/p>\n<p>Kavuri Hills , Madhapur,<\/p>\n<p>Hyderabad , TS , India<\/p>"
+              "text": "<p><\/p>\n<p>HydroGreenSprings,<\/p>\n<p>5th Floor , Plot No 112,<\/p>\n<p>Behind Jubilee Ridge Hotel<\/p>\n<p>Kavuri Hills , Madhapur,<\/p>\n<p>Hyderabad , TS , India<\/p>"
             }
           },
           "footer-1": {
@@ -107,7 +107,7 @@
           "1599933642965-0": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/unplash1.jpg",
+              "image": "shopify:\/\/shop_images\/84b4e72b-32b0-43f4-b782-b1cbaa792c3a.jpg",
               "alignment": "center center",
               "slide_title": "",
               "subheading": "",
@@ -118,7 +118,7 @@
           "1599933642965-1": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/spouts.jpg",
+              "image": "shopify:\/\/shop_images\/IMG_4499.JPG",
               "alignment": "center center",
               "slide_title": "",
               "subheading": "",
@@ -129,7 +129,7 @@
           "1599935428480": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/holding.jpg",
+              "image": "shopify:\/\/shop_images\/IMG_4549.jpg",
               "alignment": "center center",
               "slide_title": "",
               "subheading": "",
@@ -244,6 +244,7 @@
       },
       "1600175676160": {
         "type": "collection-list-hgs",
+        "disabled": true,
         "settings": {
           "title": ""
         }
@@ -265,37 +266,12 @@
       "1600176080048": {
         "type": "collection",
         "settings": {
-          "title": "Featured collection",
-          "collection": "fruits",
+          "title": "Browse Products",
+          "collection": "all-products",
           "grid": 5,
-          "rows": 3,
+          "rows": 5,
           "show_vendor": false,
           "show_view_all": true
-        }
-      },
-      "1600176146752": {
-        "type": "collection-list",
-        "blocks": {
-          "1600176146752-0": {
-            "type": "featured_collection",
-            "settings": {
-              "collection": "fruits"
-            }
-          },
-          "1600176146752-1": {
-            "type": "featured_collection",
-            "settings": {
-              "collection": "veggies"
-            }
-          }
-        },
-        "block_order": [
-          "1600176146752-0",
-          "1600176146752-1"
-        ],
-        "settings": {
-          "title": "OUR COLLECTIONS",
-          "grid": 5
         }
       },
       "1600176270712": {
@@ -361,16 +337,27 @@
         "settings": {
           "title": "About us"
         }
+      },
+      "1601458155232": {
+        "type": "collection",
+        "settings": {
+          "title": "Trending collection",
+          "collection": "trending",
+          "grid": 3,
+          "rows": 2,
+          "show_vendor": false,
+          "show_view_all": false
+        }
       }
     },
     "content_for_index": [
       "1599933642965",
+      "1600176080048",
+      "1601458155232",
       "1600179355272",
       "1600175676160",
-      "1600176080048",
       "1600175225649",
       "1600175930167",
-      "1600176146752",
       "1600176270712"
     ]
   },

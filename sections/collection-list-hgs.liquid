@@ -1,65 +1,83 @@
-<div>
-
-    <h2>{{section.settings.title | escape}} </h2>
+{% stylesheet %}
 
 
-<style>
-
-.hgs-content-table {
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9rem;
-    min-width: 800px;
-    border-radius: 10px 10px 0 0;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15) ;
+.products-all {
+  display: grid;
+  grid-template-columns: 1fr minmax(min-content, 75rem) 1fr;
 }
 
-.hgs-content-table thead tr {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: left;
-    font-weight: bold;
+.tab-container {
+  grid-column: 2/3;
+  justify-self: center;
 }
 
-.hgs-content-table th,
-.hgs-content-table td {
-    padding: 12px 15px;
+.browse-products {
+  grid-column: 2/3;
+}
+.products-all__items {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns:
+    [full-start] 1fr [center-start] repeat(
+      5,
+      [col-start] minmax(min-content, 15rem) [col-end]
+    )
+    [center-end] 1fr[full-end];
+
+  justify-items: center;
+  align-items: center;
+
+  border: 1px solid green;
 }
 
-.hgs-content-table tbody tr{
-    border-bottom: 1px solid #dddddd;    
+.product-item__image {
+  grid-column: center-start / col-end 1;
 }
 
-.hgs-content-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+.item-image {
+  width: 3rem;
+  height: 3rem;
 }
 
-.hgs-content-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
+.product-item__name {
+  grid-column: col-start 2 / col-end 2;
 }
+
+.product-item__options {
+  grid-column: col-start 3 / col-end 3;
+}
+
+{% comment %} .product-item__price {
+  grid-column: col-start 4 / col-end 4;
+} {% endcomment %}
+
+.product-item__qty {
+  grid-column: col-start 4 / col-end 4;
+}
+
+.product-item__addremove {
+  grid-column: col-start 5 / col-end 5;
+}
+
+/* increase decrease buttons */
 
 form {
-  width: auto;
+  width: 100%;
   margin: 0 auto;
-  text-align: left;  
+  text-align: center;
 }
 
 .value-button {
   display: inline-block;
   border: 1px solid #ddd;
   margin: 0px;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   text-align: center;
   vertical-align: middle;
-  padding: 5px 0;
-  background: #eee;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  padding: 0;
+  background: rgb(8, 126, 43);
+  color: #ddd; 
   user-select: none;
 }
 
@@ -82,116 +100,444 @@ form #input-wrap {
   padding: 0px;
 }
 
-input#number {
+input.input_number {
   text-align: center;
   border: none;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   margin: 0px;
-  width: 30px;
-  height: 30px;
+  width: 100px;
+  height: 70px;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+input[type="input_number"]::-webkit-inner-spin-button,
+input[type="input_number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
+/* TABS Classes */
 
-.button-add{
-    color: white;
-    border-radius: 4px;
-    text-shadow: 0 1px 1px rgba(142, 211, 158, 0.8);
-    background: rgb(28, 184, 65);
+
+.tab-container {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
 }
-</style>
 
-<body>
-    <table class="hgs-content-table">
-        <thead>
-            <tr>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Options</th>
-                <th>Price</th>
-                <th>Qty</th>
-                <th>Add to Cart</th>
-            </tr>            
-        </thead>
-        <tbody>
-            <tr>
-                <td>Apple</td>
-                <td>Apple</td>
-                <td>1kg</td>
-                <td>250.00</td>
-                <td>
-                    <form>
-                        <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-                        <input type="number" id="number" value="0" />
-                        <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
-                    </form>
-                </td>
-                <td>
-                    <button class="button-add">Add</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Tomoto</td>
-                <td>Tomato</td>
-                <td>1kg</td>
-                <td>50.00</td>
-                <td>
-                    <form>
-                        <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-                        <input type="number" id="number" value="0" />
-                        <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
-                    </form>
-                </td>
-                <td>Add</td>
-            </tr>
-            <tr>
-                <td>Potato</td>
-                <td>Potato</td>
-                <td>1kg</td>
-                <td>80.00</td>
-                <td>
-                    <form>
-                        <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-                        <input type="number" id="number" value="0" />
-                        <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
-                    </form>
-                </td>
-                <td>Add</td>
-            </tr>
-        </tbody>
-    </table>
-</body>
+.tab-btn {
+  padding: 1rem;
+  border: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+  display: block;
+  background: rgb(7, 110, 7);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  letter-spacing: 0.25rem;
+  border-radius: 5%;
+}
+.tab-btn:hover:not(.active) {
+  background: rgb(69, 214, 88);
+  color: rgb(8, 49, 8);
+}
+
+/* hide content */
+.browse-products {
+  display: none;
+}
+.tab-btn.active {
+  background: rgb(255, 255, 255);
+  color: green;
+  border: 1px solid;
+}
+.browse-products.active {
+  display: block;
+}
+
+{% endstylesheet %}
+
+
+{%- assign allProducts = collections['all'] -%}
+
+
+    <div class="container-tabs">
+      <div class="products-header">
+        <div class="products-all">
+          <div class="tab-container">
+            <button class="tab-btn active" data-id="all-products">All Products</button>
+            <button class="tab-btn" data-id="organic">Organic</button>
+            <button class="tab-btn" data-id="exotic">Exotic</button>
+            <button class="tab-btn" data-id="micro">Micro Greens</button>
+          </div>
+          <div class="browse-products active" id="all-products">            
+          
+          <div class="products-all__items">
+            <div class="product-item__image">Image</div>
+            <div class="product-item__name">Name</div>
+            <div class="product-item__options">Options</div>
+            {% comment %} <div class="product-item__price">Price</div> {% endcomment %}
+            <div class="product-item__qty">Quantity</div>
+            <div class="product-item__addremove">Add/Remove</div>
+          </div>
+
+          {% for product in allProducts.products %}
+
+          {% assign product_id = product.id %}
+
+          <div class="products-all__items">
+            <div class="product-item__image">
+              <img class="item-image" src="{{product.featured_image | img_url: 'small'}}" alt="{{product.title}}" />
+            </div>
+            <div class="product-item__name">{{product.title}}</div>         
+            
+            {% if product.has_only_default_variant %}
+                <input name="id" value="{{ variant.id }}" type="hidden">
+            {% else %}
+            <select name="id" id="option_id">
+                {% for variant in product.variants %}
+                {% assign variant_id = variant.id %}
+                <option value="{{ variant.id }}">{{ variant.title }} - {{variant.price | money}}</option>
+                {% endfor%}
+            </select>
+
+             {% endif %}          
+
+            {% comment %} <div class="product-item__price">{{product.price | money}}</div> {% endcomment %}
+            
+            <div class="product-item__qty">
+              
+                <div class="value-button" id="decrease" onclick="decreaseValue({{product_id}})" value="Decrease Value">-</div>
+                <input class="input_number" type="number" id="{{product_id}}" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue({{product_id}})" value="Increase Value">+</div>
+              
+            </div>
+            <div class="product-item__addremove">
+              <input type="checkbox" id="addremove" name="add_remove" value="addremove" onclick="addToCart({{ variant_id }})">
+              <label for="addremove"> Add to cart</label><br>
+            </div>
+          </div>
+
+        {% endfor %}
+        </div>
+
+        {% comment %} <div class="browse-products" id="organic">            
+          
+          <div class="products-all__items">
+            <div class="product-item__image">Image</div>
+            <div class="product-item__name">Organic Name</div>
+            <div class="product-item__options">Options</div>
+            <div class="product-item__price">Price</div>
+            <div class="product-item__qty">Quantity</div>
+            <div class="product-item__addremove">Add/Remove</div>
+          </div>
+          <div class="products-all__items">
+            <div class="product-item__image">
+              <img class="item-image" src="./images/apple.png" alt="apple" />
+            </div>
+            <div class="product-item__name">Apple</div>
+            <div class="product-item__options">
+              <select id="option_id" name="option_name">
+                <option value="6no">6no for 120</option>
+                <option value="12no">1kg for 220</option>   
+              </select>            
+            </div>
+            <div class="product-item__price">220</div>
+            <div class="product-item__qty">
+              <form>
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+              </form>
+            </div>
+            <div class="product-item__addremove">
+              <input type="checkbox" id="addremove" name="add_remove" value="addremove" onclick="addToCart()">
+              <label for="addremove"> Add to cart</label><br>
+            </div>
+          </div>
+          <div class="products-all__items">
+            <div class="product-item__image">
+              <img class="item-image" src="./images/guava.jpg" alt="Guava" />
+            </div>
+            <div class="product-item__name">Guava</div>
+            <div class="product-item__options">
+              <select id="option_id" name="option_name">
+                <option value="6no">500grams for 40</option>
+                <option value="12no">1kg for 80</option>   
+              </select> 
+            </div>
+            <div class="product-item__price">80</div>
+            <div class="product-item__qty">
+              <form>
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+              </form>
+            </div>
+            <div class="product-item__addremove">
+              <input type="checkbox" id="addremove" name="add_remove" value="addremove" onclick="addToCart()">
+              <label for="addremove"> Add to cart</label><br>
+            </div>
+          </div>
+          <div class="products-all__items">
+            <div class="product-item__image">
+              <img class="item-image" src="./images/orange.jpg" alt="Orange" />
+            </div>
+            <div class="product-item__name">Otange</div>
+            <div class="product-item__options">
+              <select id="option_id" name="option_name">
+                <option value="6no">6no for 80</option>
+                <option value="12no">12no for 150</option>   
+              </select> 
+            </div>
+            <div class="product-item__price">120</div>
+            <div class="product-item__qty">
+              <form>
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+              </form>
+            </div>
+            <div class="product-item__addremove">
+              <input type="checkbox" id="addremove" name="add_remove" value="addremove" onclick="addToCart()">
+              <label for="addremove"> Add to cart</label><br>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="browse-products" id="exotic">            
+          
+          <div class="products-all__items">
+            <div class="product-item__image">Image</div>
+            <div class="product-item__name">Exotic Name</div>
+            <div class="product-item__options">Options</div>
+            <div class="product-item__price">Price</div>
+            <div class="product-item__qty">Quantity</div>
+            <div class="product-item__addremove">Add/Remove</div>
+          </div>
+          <div class="products-all__items">
+            <div class="product-item__image">
+              <img class="item-image" src="./images/apple.png" alt="apple" />
+            </div>
+            <div class="product-item__name">Apple</div>
+            <div class="product-item__options">
+              <select id="option_id" name="option_name">
+                <option value="6no">6no for 120</option>
+                <option value="12no">1kg for 220</option>   
+              </select>            
+            </div>
+            <div class="product-item__price">220</div>
+            <div class="product-item__qty">
+              <form>
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+              </form>
+            </div>
+            <div class="product-item__addremove">
+              <input type="checkbox" id="addremove" name="add_remove" value="addremove" onclick="addToCart()">
+              <label for="addremove"> Add to cart</label><br>
+            </div>
+          </div>
+          <div class="products-all__items">
+            <div class="product-item__image">
+              <img class="item-image" src="./images/guava.jpg" alt="Guava" />
+            </div>
+            <div class="product-item__name">Guava</div>
+            <div class="product-item__options">
+              <select id="option_id" name="option_name">
+                <option value="6no">500grams for 40</option>
+                <option value="12no">1kg for 80</option>   
+              </select> 
+            </div>
+            <div class="product-item__price">80</div>
+            <div class="product-item__qty">
+              <form>
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+              </form>
+            </div>
+            <div class="product-item__addremove">
+              <input type="checkbox" id="addremove" name="add_remove" value="addremove" onclick="addToCart()">
+              <label for="addremove"> Add to cart</label><br>
+            </div>
+          </div>
+          <div class="products-all__items">
+            <div class="product-item__image">
+              <img class="item-image" src="./images/orange.jpg" alt="Orange" />
+            </div>
+            <div class="product-item__name">Otange</div>
+            <div class="product-item__options">
+              <select id="option_id" name="option_name">
+                <option value="6no">6no for 80</option>
+                <option value="12no">12no for 150</option>   
+              </select> 
+            </div>
+            <div class="product-item__price">120</div>
+            <div class="product-item__qty">
+              <form>
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+              </form>
+            </div>
+            <div class="product-item__addremove">
+              <input type="checkbox" id="addremove" name="add_remove" value="addremove" onclick="addToCart()">
+              <label for="addremove"> Add to cart</label><br>
+            </div>
+          </div>
+
+        </div>
+        
+        <div class="browse-products" id="micro">            
+          
+          <div class="products-all__items">
+            <div class="product-item__image">Image</div>
+            <div class="product-item__name">MG Name</div>
+            <div class="product-item__options">Options</div>
+            <div class="product-item__price">Price</div>
+            <div class="product-item__qty">Quantity</div>
+            <div class="product-item__addremove">Add/Remove</div>
+          </div>
+          <div class="products-all__items">
+            <div class="product-item__image">
+              <img class="item-image" src="./images/apple.png" alt="apple" />
+            </div>
+            <div class="product-item__name">Apple</div>
+            <div class="product-item__options">
+              <select id="option_id" name="option_name">
+                <option value="6no">6no for 120</option>
+                <option value="12no">1kg for 220</option>   
+              </select>            
+            </div>
+            <div class="product-item__price">220</div>
+            <div class="product-item__qty">
+              <form>
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+              </form>
+            </div>
+            <div class="product-item__addremove">
+              <input type="checkbox" id="addremove" name="add_remove" value="addremove" onclick="addToCart()">
+              <label for="addremove"> Add to cart</label><br>
+            </div>
+          </div>
+          <div class="products-all__items">
+            <div class="product-item__image">
+              <img class="item-image" src="./images/guava.jpg" alt="Guava" />
+            </div>
+            <div class="product-item__name">Guava</div>
+            <div class="product-item__options">
+              <select id="option_id" name="option_name">
+                <option value="6no">500grams for 40</option>
+                <option value="12no">1kg for 80</option>   
+              </select> 
+            </div>
+            <div class="product-item__price">80</div>
+            <div class="product-item__qty">
+              <form>
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+              </form>
+            </div>
+            <div class="product-item__addremove">
+              <input type="checkbox" id="addremove" name="add_remove" value="addremove" onclick="addToCart()">
+              <label for="addremove"> Add to cart</label><br>
+            </div>
+          </div>
+          <div class="products-all__items">
+            <div class="product-item__image">
+              <img class="item-image" src="./images/orange.jpg" alt="Orange" />
+            </div>
+            <div class="product-item__name">Otange</div>
+            <div class="product-item__options">
+              <select id="option_id" name="option_name">
+                <option value="6no">6no for 80</option>
+                <option value="12no">12no for 150</option>   
+              </select> 
+            </div>
+            <div class="product-item__price">120</div>
+            <div class="product-item__qty">
+              <form>
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+              </form>
+            </div>
+            <div class="product-item__addremove">
+              <input type="checkbox" id="addremove" name="add_remove" value="addremove" onclick="addToCart()">
+              <label for="addremove"> Add to cart</label><br>
+            </div>
+          </div>
+
+        </div> {% endcomment %}
+
+        </div>
+      </div>
+    </div>
 
 <script>
-function increaseValue() {
-  var value = parseInt(document.getElementById('number').value, 10);
-  value = isNaN(value) ? 0 : value;
+function increaseValue(pid) {    
+  var value = parseInt(document.getElementById(pid).value, 10);
+  value = isNaN(value) ? 1 : value;
   value++;
-  document.getElementById('number').value = value;
+  value > 10 ? (value = 10) : "";
+  document.getElementById(pid).value = value;
 }
 
-function decreaseValue() {
-  var value = parseInt(document.getElementById('number').value, 10);
-  value = isNaN(value) ? 0 : value;
-  value < 1 ? value = 1 : '';
+function decreaseValue(pid) {    
+  var value = parseInt(document.getElementById(pid).value, 10);
+  value = isNaN(value) ? 1 : value;
   value--;
-  document.getElementById('number').value = value;
+  value < 1 ? (value = 1) : "";
+  document.getElementById(pid).value = value;
 }
+
+const products = document.querySelector(".products-all");
+const btns = document.querySelectorAll(".tab-btn");
+const articles = document.querySelectorAll(".browse-products");
+
+products.addEventListener("click", function (e) {
+  const id = e.target.dataset.id;  
+  if (id) {
+    // remove selected from other buttons
+    btns.forEach(function (btn) {
+      btn.classList.remove("active");
+    });
+    e.target.classList.add("active");
+    // hide other articles
+    articles.forEach(function (article) {
+      article.classList.remove("active");
+    });
+    const element = document.getElementById(id);
+    element.classList.add("active");
+  }
+
+});
+
+function addToCart(vid) {
+    var checkBox = document.getElementById("addremove");
+
+    const opt = document.querySelector('#option_id option:checked');
+// opt is now the selected option, so
+    console.log(opt.value, 'is the selected value');
+    console.log(opt.text, "is the selected option's text");
+    
+     console.log(vid, "is the variant id") ;
+}
+
 </script>
-
-</div>
-
-
 
 {% schema %}
 {
-  "name": "Product List HGS",  
+  "name": "HGS Browse Products",
   "settings": [
     {
         "id": "title",
@@ -201,7 +547,7 @@ function decreaseValue() {
   ],  
   "presets": [
       {
-          "name": "HGS Featured Collection",
+          "name": "HGS Browse Collection",
           "category": "Features"
       }
   ]
