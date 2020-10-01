@@ -196,11 +196,11 @@ input[type="input_number"]::-webkit-outer-spin-button {
             
             {% if product.has_only_default_variant %}
                 <input name="id" value="{{ variant.id }}" type="hidden">
-            {% else %}
-            <select name="id" id="option_id">
+            {% else %}            
+            <select name="id" id="{{product.id}}" onchange="pushValue(this.value)">
                 {% for variant in product.variants %}
                 {% assign variant_id = variant.id %}
-                <option value="{{ variant.id }}">{{ variant.title }} - {{variant.price | money}}</option>
+                <option value="{{ variant.id }}" data-value="{{ variant.id }}" data-price='{{variant.price | money}}'>{{ variant.title }} - {{variant.price | money}}</option>
                 {% endfor%}
             </select>
 
@@ -210,9 +210,9 @@ input[type="input_number"]::-webkit-outer-spin-button {
             
             <div class="product-item__qty">
               
-                <div class="value-button" id="decrease" onclick="decreaseValue({{product_id}})" value="Decrease Value">-</div>
-                <input class="input_number" type="number" id="{{product_id}}" value="1" />
-                <div class="value-button" id="increase" onclick="increaseValue({{product_id}})" value="Increase Value">+</div>
+                <div class="value-button" id="decrease" onclick="decreaseValue({{variant_id}})" value="Decrease Value">-</div>
+                <input class="input_number" type="number" id="{{variant_id}}" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue({{variant_id}})" value="Increase Value">+</div>
               
             </div>
             <div class="product-item__addremove">
@@ -532,6 +532,13 @@ function addToCart(vid) {
     
      console.log(vid, "is the variant id") ;
 }
+
+function pushValue(value){
+
+  console.log(value);
+  
+}
+
 
 </script>
 
