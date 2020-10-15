@@ -58,7 +58,7 @@
           "main_linklist": "main-menu",
           "message": true,
           "home_page_only": true,
-          "message_text": "Deal of the day - 10%  off",
+          "message_text": "BETA VERSION - DO NOT ORDER - SITE IS NOT LIVE YET",
           "message_link": "",
           "color_bg": "#4b9d1c",
           "color_text": "#ffffff"
@@ -78,7 +78,7 @@
             "type": "text",
             "settings": {
               "title": "Please contact us",
-              "text": "<p><\/p>\n<p>HydroGreenSprings,<\/p>\n<p>5th Floor , Plot No 112,<\/p>\n<p>Behind Jubilee Ridge Hotel<\/p>\n<p>Kavuri Hills , Madhapur,<\/p>\n<p>Hyderabad , TS , India<\/p>"
+              "text": "<p><\/p><p>HydroGreenSprings,<\/p><p>5th Floor , Plot No 112,<\/p><p>Behind Jubilee Ridge Hotel<\/p><p>Kavuri Hills , Madhapur,<\/p><p>Hyderabad , TS , India<\/p>"
             }
           },
           "footer-1": {
@@ -104,21 +104,10 @@
       "1599933642965": {
         "type": "slideshow",
         "blocks": {
-          "1599933642965-0": {
+          "7099f124-cbe1-486c-9cb8-d1ea3ea28c19": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/84b4e72b-32b0-43f4-b782-b1cbaa792c3a.jpg",
-              "alignment": "center center",
-              "slide_title": "",
-              "subheading": "",
-              "button_label": "",
-              "button_link": ""
-            }
-          },
-          "1599933642965-1": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/IMG_4499.JPG",
+              "image": "shopify:\/\/shop_images\/5c10e4692600005c0484a7a4.jpg",
               "alignment": "center center",
               "slide_title": "",
               "subheading": "",
@@ -129,7 +118,29 @@
           "1599935428480": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/IMG_4549.jpg",
+              "image": "shopify:\/\/shop_images\/WeReGettingReady.png",
+              "alignment": "center center",
+              "slide_title": "",
+              "subheading": "",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "1599933642965-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/0312-1.jpg",
+              "alignment": "center center",
+              "slide_title": "",
+              "subheading": "",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "1599933642965-1": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/person-holding-a-green-plant-1072824.jpg",
               "alignment": "center center",
               "slide_title": "",
               "subheading": "",
@@ -139,15 +150,16 @@
           }
         },
         "block_order": [
+          "7099f124-cbe1-486c-9cb8-d1ea3ea28c19",
+          "1599935428480",
           "1599933642965-0",
-          "1599933642965-1",
-          "1599935428480"
+          "1599933642965-1"
         ],
         "settings": {
           "slideshow_height": "small",
           "text_size": "medium",
           "text_alignment": "center center",
-          "show_overlay": false,
+          "show_overlay": true,
           "autorotate": true,
           "autorotate_speed": 3
         }
@@ -202,6 +214,7 @@
       },
       "1600175225649": {
         "type": "logo-bar",
+        "disabled": true,
         "blocks": {
           "1600175225649-0": {
             "type": "logo_image",
@@ -242,13 +255,6 @@
           "title": "HydrogreenSprings TRUST"
         }
       },
-      "1600175676160": {
-        "type": "collection-list-hgs",
-        "disabled": true,
-        "settings": {
-          "title": ""
-        }
-      },
       "1600175930167": {
         "type": "hero",
         "settings": {
@@ -266,7 +272,7 @@
       "1600176080048": {
         "type": "collection",
         "settings": {
-          "title": "Browse Products",
+          "title": "ALL PRODUCTS",
           "collection": "all-products",
           "grid": 5,
           "rows": 5,
@@ -315,7 +321,7 @@
             "type": "text",
             "settings": {
               "title": "WITH GREAT QUALITY COMES GREAT CHOICE.",
-              "text": "<p>Creating fulfilling shopping experiences since 2020,<br>HGS&nbsp;is more than just a retail store. From fresh produce,<br>gourmet foods to home appliances and everything in between,<br>we bring the best of the world to our aisles.<\/p>",
+              "text": "<p>HydroGreenSprings is not the brainchild of a retail giant focused on profits over quality. It is born out of necessity for providing healthy and sustainable food choices focused on ‘your’ needs. We aspire to be more than a retail store and offer fresh produce, gourmet foods to home appliances, and everything in between. We bring the best of the world to our aisles.<\/p>",
               "width": "50%",
               "alignment": "center",
               "align_text": "left"
@@ -340,9 +346,10 @@
       },
       "1601458155232": {
         "type": "collection",
+        "disabled": true,
         "settings": {
           "title": "Trending collection",
-          "collection": "trending",
+          "collection": "",
           "grid": 3,
           "rows": 2,
           "show_vendor": false,
@@ -355,7 +362,6 @@
       "1600176080048",
       "1601458155232",
       "1600179355272",
-      "1600175676160",
       "1600175225649",
       "1600175930167",
       "1600176270712"

@@ -6787,7 +6787,34 @@ theme.Product = (function() {
         .done(
           function(item) {
             this._hideErrorMessage();
+            this._setupCartPopup(item);            
+          }.bind(this)
+        )
+        .fail(
+          function(response) {
+            this.$previouslyFocusedElement.focus();
+            var errorMessage = response.responseJSON
+              ? response.responseJSON.description
+              : theme.strings.cartError;
+            this._showErrorMessage(errorMessage);
+            this._handleButtonLoadingState(false);
+          }.bind(this)
+        );
+    },
+
+    _addItemToCart2: function(data) {
+      var params = {
+        url: '/cart/add.js',
+        data: $(data).serialize(),
+        dataType: 'json'
+      };
+
+      $.post(params)
+        .done(
+          function(item) {
+            this._hideErrorMessage();
             this._setupCartPopup(item);
+            location.href="/cart";
           }.bind(this)
         )
         .fail(

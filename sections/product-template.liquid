@@ -213,7 +213,7 @@
                     {% unless current_variant.available %}
                       {{ 'products.product.sold_out' | t }}
                     {% else %}
-                      {{ 'products.product.add_to_cart' | t }}
+                      {{ 'products.product.add_to_cart' | t }}                      
                     {% endunless %}
                   </span>
                   <span class="hide" data-loader>
@@ -222,7 +222,8 @@
                 </button>
                 {% if section.settings.enable_payment_button %}
                   {{ form | payment_button }}
-                {% endif %}
+                {% endif %}            
+
               </div>
             </div>
           {% endform %}
@@ -265,8 +266,6 @@
     {{ product.media | where: 'media_type', 'model' | json }}
   </script>
 {% endunless %}
-
-
 
 {% schema %}
 {
