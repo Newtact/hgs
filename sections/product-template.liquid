@@ -219,14 +219,31 @@
                   <span class="hide" data-loader>
                     {% include 'icon-spinner' %}
                   </span>
-                </button>
+                </button>    
+                
+                <button type="submit" name="add"
+                  {% unless current_variant.available %} aria-disabled="true"{% endunless %}
+                  aria-label="{% unless current_variant.available %}{{ 'products.product.sold_out' | t }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endunless %}"
+                  class="btn product-form__cart-submit{% if section.settings.enable_payment_button %} btn--secondary-accent{% endif %}"                  
+                  data-add-to-cart onclick="setTimeout(function(){ window.location.href = '/cart';},1000);">
+                   <span data-add-to-cart-text>
+                    {% unless current_variant.available %}
+                      SORRY - not available
+                    {% else %}
+                      BUY iT NOW                     
+                    {% endunless %}
+                  </span>                
+                </button> 
+
+                {% comment %} 
+                this is default BUY IT BUTTON which adds and only that product , remove this line and comments if want it enable
                 {% if section.settings.enable_payment_button %}
                   {{ form | payment_button }}
-                {% endif %}            
+                {% endif %}  {% endcomment %}
 
               </div>
             </div>
-          {% endform %}
+          {% endform %}        
         </div>
 
         {%- comment -%}
