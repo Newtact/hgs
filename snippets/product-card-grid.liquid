@@ -48,3 +48,11 @@
   {% include 'product-price-listing', product: product, show_vendor: show_vendor %}
 
 </div>
+
+<form method="post" action="/cart/add">
+  <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+  {% comment %} <input class="hgs-qty" min="1" type="number" id="quantity" name="quantity" value="1"/> {% endcomment %}
+  <input class="hgs-submit-btn" type="submit" value="ADD" class="btn" />
+</form>
+
+
